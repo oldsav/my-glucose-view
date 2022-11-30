@@ -28,6 +28,9 @@ const queryType = new GraphQLObjectType({
           return startPeriod().then(({ date }) => {
             const endPeriod = date - 2629743000 * 3;
             const result: any = Entries.find({
+              sgv: {
+                $gte: 0,
+              },
               date: {
                 $gte: endPeriod,
                 $lt: date,

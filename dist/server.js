@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
+        while (_) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -46,14 +46,14 @@ var cors_1 = __importDefault(require("cors"));
 var express_graphql_1 = require("express-graphql");
 var graphql_1 = require("graphql");
 var query_1 = __importDefault(require("./graphql/query"));
-var app = (0, express_1.default)();
-app.use((0, cors_1.default)());
+var app = express_1.default();
+app.use(cors_1.default());
 var schema = new graphql_1.GraphQLSchema({
     query: query_1.default,
 });
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-app.use("/graphql", (0, express_graphql_1.graphqlHTTP)({ graphiql: true, schema: schema }));
+app.use("/graphql", express_graphql_1.graphqlHTTP({ graphiql: true, schema: schema }));
 app.get("/check", function (req, res) {
     res.sendStatus(200);
 });
@@ -75,7 +75,7 @@ var start = function () { return __awaiter(void 0, void 0, void 0, function () {
                 return [4, mongoose_1.default.connect(url)];
             case 2:
                 _a.sent();
-                app.listen(PORT, function () { return console.log("App Up in ".concat(PORT)); });
+                app.listen(PORT, function () { return console.log("App Up in " + PORT); });
                 return [3, 4];
             case 3:
                 err_1 = _a.sent();

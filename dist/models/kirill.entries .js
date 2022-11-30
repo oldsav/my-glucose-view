@@ -22,4 +22,4 @@ var entriesSchema = new mongoose_1.Schema({
     utcOffset: { type: Number, required: true },
     sysTime: { type: String, required: true },
 });
-exports.default = (0, mongoose_1.model)("Entries", entriesSchema);
+exports.default = mongoose_1.model("Entries", entriesSchema);
