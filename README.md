@@ -1,1 +1,0 @@
-# my-glucose-view client
